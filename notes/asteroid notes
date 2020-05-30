@@ -1,0 +1,14 @@
+a command line interface that gets information about asteroids that fly close to earth on a given day
+
+user types in a day/month/year?
+user sees a list of asteroids/objects that have flown by our planet
+user can choose an object and see more information about that specific asteroid/object 
+
+please choose an asteroid
+1. JBL12
+2. KMD420
+3. MJ12
+
+user chooses --> 1.
+
+1. JBL12 --> size 12sq km - distance 450000km
