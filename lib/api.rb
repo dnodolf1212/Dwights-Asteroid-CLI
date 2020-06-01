@@ -14,7 +14,7 @@ class Api
         data = JSON.parse(response.body)
         data["near_earth_objects"].each do |date|
             date.each do |asteroid, name|
-            puts asteroid["name"] 
+            puts asteroid["name"].to_i
             binding.pry
 
             
@@ -22,16 +22,16 @@ class Api
             
             #puts asteroids[1]["name"]
             #puts asteroids[1]["nasa_jpl_url"]
-             #binding.pry
             #Asteroids.new(name, id)
-            #end 
+            end 
             end 
         end
+    end 
 
            
             
              
-    end 
+    
 
     
      
