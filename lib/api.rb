@@ -13,14 +13,17 @@ class Api
         response = RestClient.get(BASE_URL)
         data = JSON.parse(response.body)
         data["near_earth_objects"].each do |date, asteroids|
-            
-
-           
+            #asteroids["name"].each do |name|
+                #puts name 
             puts asteroids[1]["name"]
             puts asteroids[1]["nasa_jpl_url"]
-             binding.pry
+             #binding.pry
             #Asteroids.new(name, id)
+            #end 
         end
+
+           
+            
              
     end 
 
