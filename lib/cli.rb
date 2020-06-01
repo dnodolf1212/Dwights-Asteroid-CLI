@@ -1,3 +1,7 @@
 class Cli
-    puts "cli class loaded"
+
+    
+        puts "Todays Asteroids and Near-Earth-Objects:"
+    
+    
 end 
