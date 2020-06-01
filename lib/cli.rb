@@ -7,13 +7,12 @@ class Cli
   end
 
   def print_welcome
-    puts "Hi, Let's check out today's Asteroids and Near-Earth-Objects:"
+    puts "Hi, Let's check out today's Asteroids and Near-Earth-Objects!"
   end
 
   def main
     print_all
     print_choice_message
-    id = get_choice 
   end 
 
   def print_all
@@ -34,18 +33,10 @@ class Cli
   end 
 
   def valid_choice?
-    id = id.to_i
-    if id < 1 || id > Asteroid.all.size
-      print_warning 
-      sleep 1.5
-      main
-    end 
-  id
-  end 
+    
 end 
 
   
 
     
-                
-end 
+                 
