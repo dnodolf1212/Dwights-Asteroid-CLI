@@ -1,11 +1,8 @@
 require "awesome_print"
 class Api
     todays_date = Time.now.to_s.split(" ")[0]
-    puts "api class loaded"
     KEY = ENV["API_KEY"]
-    
     url = "https://api.nasa.gov/neo/rest/v1/feed?start_date=#{todays_date}&end_date=#{todays_date}&api_key=DEMO_KEY"
-    
     BASE_URL =  "https://api.nasa.gov/neo/rest/v1/feed?start_date=#{todays_date}&end_date=#{todays_date}&api_key=FIZam8paaqjNx2IjOKpRwCZymLdMtlrvcDaq5jSX"
     
     def self.get_profile

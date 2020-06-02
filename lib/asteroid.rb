@@ -1,7 +1,7 @@
 class Asteroid
     attr_accessor :name, :id
-
-    def initialize(name, id)
+    @@all = []
+    def initialize(name)
         @name = name
         @id = id
         @@all << self 

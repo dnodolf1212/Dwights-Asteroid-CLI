@@ -1,3 +1,4 @@
+require 'pry'
 class Cli
 
   def run
@@ -5,19 +6,23 @@ class Cli
     Api.get_profile
     main
   end
+  
+  def main
+    print_all
+    print_choice_message
+    num = get_choice
+    #binding.pry
 
+  end 
+  
+  
   def print_welcome
     puts "Hi, Let's check out today's Asteroids and Near-Earth-Objects!"
   end
 
-  def main
-    print_all
-    print_choice_message
-  end 
-
   def print_all
     num = 0 
-    Asteroids.all.each {|rock| puts "#{num +=1}.   #{rock.name}"}
+    Asteroid.all.each {|rock| puts "#{num +=1}. #{rock.name}"}
   end 
 
   def print_choice_message
@@ -27,12 +32,20 @@ class Cli
   def print_warning
     puts "Oops, Invalid selection."
   end 
-  
+   
   def get_choice
     gets.chomp
   end 
 
-  def valid_choice?
+  def valid_choice?(num)
+    num = num.to_i
+    if num < 1 || num > Asteroid.all.size
+      print_warning
+      main
+      
+    end
+    num
+  end  
     
 end 
 
