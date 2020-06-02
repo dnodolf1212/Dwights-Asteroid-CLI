@@ -12,6 +12,8 @@ class Api
         
         data["near_earth_objects"][todays_date].each do |asteroid|
             name = asteroid["name"]
+            size = asteroid["estimated_diameter"]["feet"]["estimated_diameter_max"]
+            speed = asteroid["close_approach_data"][0]["relative_velocity"]["miles_per_hour"]
             Asteroid.new(name)
         end 
     end 

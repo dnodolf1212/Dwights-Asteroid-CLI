@@ -1,9 +1,10 @@
 class Asteroid
-    attr_accessor :name, :id
+    attr_accessor :name, :size, :speed
     @@all = []
-    def initialize(name)
+    def initialize(name, size, speed)
         @name = name
-        @id = id
+        @size = size
+        @speed = speed
         @@all << self 
     end
 
