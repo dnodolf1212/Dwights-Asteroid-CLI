@@ -13,10 +13,11 @@ class Api
         data["near_earth_objects"][todays_date].each do |asteroid|
             name = asteroid["name"]
             Asteroid.new(name)
-
-          
-        end
+        end 
     end 
+
+    
+
 
 end 
  #Api.get_profile 

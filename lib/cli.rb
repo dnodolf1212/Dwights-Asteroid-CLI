@@ -1,4 +1,4 @@
-require 'pry'
+
 class Cli
 
   def run
@@ -10,9 +10,8 @@ class Cli
   def main
     print_all
     print_choice_message
-    num = get_choice
-    #binding.pry
-
+    num = valid_choice?(get_choice)
+    go_to_info
   end 
   
   
@@ -41,11 +40,15 @@ class Cli
     num = num.to_i
     if num < 1 || num > Asteroid.all.size
       print_warning
+      sleep 1.5
       main
-      
     end
     num
   end  
+
+  def go_to_info
+      Api.get_profile
+  end
     
 end 
 
