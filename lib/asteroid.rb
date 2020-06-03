@@ -1,9 +1,10 @@
+require 'pry'
 class Asteroid
-    attr_accessor :name, :size, :speed
+    attr_accessor :name, :max_size, :speed
     @@all = []
-    def initialize(name, size, speed)
+    def initialize(name, max_size, speed)
         @name = name
-        @size = size
+        @max_size = max_size
         @speed = speed
         @@all << self 
     end
@@ -11,6 +12,15 @@ class Asteroid
     def self.all
         @@all
     end 
+
+    def self.find_by_num(num)
+        index = num.to_i - 1
+        all[index]
+    end 
+
+    
+
+
 
     
 end 

@@ -1,4 +1,5 @@
 
+require 'pry'
 class Cli
 
   def run
@@ -11,7 +12,9 @@ class Cli
     print_all
     print_choice_message
     num = valid_choice?(get_choice)
-    go_to_info
+    go_to_info(num)
+    print_keep_exploring?
+    explore?(get_choice)
   end 
   
   
@@ -31,6 +34,14 @@ class Cli
   def print_warning
     puts "Oops, Invalid selection."
   end 
+
+  def print_keep_exploring?
+    puts "Do you want to keep exploring? (y/n)"
+  end
+
+  def print_goodbye
+    puts "Thanks for using the Asteroid CLI. Come back tomorrow for new Asteroids and Near-Earth_Objects!"
+  end
    
   def get_choice
     gets.chomp
@@ -46,9 +57,29 @@ class Cli
     num
   end  
 
-  def go_to_info
-      Api.get_profile
+  def go_to_info(num)
+      puts "fetching details on your selection"
+      sleep 1.5
+      selected_asteroid = Asteroid.find_by_num(num)
+      puts "NAME: #{selected_asteroid.name}"
+      puts "MAXIMUM SIZE: #{selected_asteroid.max_size} ft. in diameter."
+      puts "SPEED: #{selected_asteroid.speed} MPH!!"
   end
+  
+  def explore?(choice)
+    if choice == "y" 
+      main
+    else
+      print_goodbye
+      exit
+    end
+  end 
+
+   
+
+       
+      
+
     
 end 
 
