@@ -18,9 +18,4 @@ class Asteroid
         all[index]
     end 
 
-    
-
-
-
-    
 end 
