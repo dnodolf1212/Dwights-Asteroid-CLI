@@ -1,6 +1,6 @@
-Dwight_CLI_GEM_Project-master
+# Dwight Asteroid CLI
 
-Description:
+## Description:
 The Asteroid CLI works with the NASA Asteroids - NeoWs Near-Earth-Object Web Service to gather a daily list of asteroids that pass by our planet. This CLI will let you choose an object by number and give you information on the size and speed of that object.  
 
 Installation:
