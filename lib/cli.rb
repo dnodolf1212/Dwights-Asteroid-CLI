@@ -62,8 +62,8 @@ class Cli
       sleep 1.5
       selected_asteroid = Asteroid.find_by_num(num)
       puts "NAME: #{selected_asteroid.name}"
-      puts "MAXIMUM SIZE: #{selected_asteroid.max_size} ft. in diameter."
-      puts "SPEED: #{selected_asteroid.speed} MPH!!"
+      puts "MAXIMUM SIZE: #{selected_asteroid.max_size.round(1)} ft. in diameter."
+      puts "SPEED: #{selected_asteroid.speed.to_i.round(1)} MPH!!"
   end
   
   def explore?(choice)
