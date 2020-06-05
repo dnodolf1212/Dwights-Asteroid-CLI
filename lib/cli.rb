@@ -1,5 +1,6 @@
 
 require 'pry'
+require 'rainbow'
 class Cli
 
   def run
@@ -19,28 +20,28 @@ class Cli
   
   
   def print_welcome
-    puts "Hi, Let's check out today's Asteroids and Near-Earth-Objects!"
+    puts Rainbow("Hi, Let's check out today's Asteroids and Near-Earth-Objects!").red.bright
   end
 
   def print_all
     num = 0 
-    Asteroid.all.each {|rock| puts "#{num +=1}. #{rock.name}"}
+    Asteroid.all.each {|rock| puts Rainbow("#{num +=1}. #{rock.name}").green.bright}
   end 
 
   def print_choice_message
-    puts "Choose an asteroid by number for more information!!"
+    puts Rainbow("Choose an asteroid by number for more information!!").red.bright
   end 
   
   def print_warning
-    puts "Oops, Invalid selection."
+    puts Rainbow("Oops, Invalid selection.").magenta
   end 
 
   def print_keep_exploring?
-    puts "Do you want to keep exploring? (y/n)"
+    puts Rainbow("Do you want to keep exploring? (y/n)").red.bright
   end
 
   def print_goodbye
-    puts "Thanks for using the Asteroid CLI. Come back tomorrow for new Asteroids and Near-Earth_Objects!"
+    puts Rainbow("Thanks for using the Asteroid CLI. Come back tomorrow for new Asteroids and Near-Earth_Objects!").yellow.bright
   end
    
   def get_choice
@@ -58,12 +59,12 @@ class Cli
   end  
 
   def go_to_info(num)
-      puts "fetching details on your selection"
+      puts Rainbow("fetching details on your selection").red.bright
       sleep 1.5
       selected_asteroid = Asteroid.find_by_num(num)
-      puts "NAME: #{selected_asteroid.name}"
-      puts "MAXIMUM SIZE: #{selected_asteroid.max_size.round(1)} ft. in diameter."
-      puts "SPEED: #{selected_asteroid.speed.to_i.round(1)} MPH!!"
+      puts Rainbow("NAME: #{selected_asteroid.name}").blue
+      puts Rainbow("MAXIMUM SIZE: #{selected_asteroid.max_size.round(1)} ft. in diameter.").blue
+      puts Rainbow("SPEED: #{selected_asteroid.speed.to_i.round(1)} MPH!!").blue
   end
   
   def explore?(choice)

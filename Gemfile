@@ -5,6 +5,7 @@ source "https://rubygems.org"
 gem 'json'
 gem 'rest-client'
 gem 'dotenv'
+gem 'rainbow'
 
 group :development do
     gem 'pry'
