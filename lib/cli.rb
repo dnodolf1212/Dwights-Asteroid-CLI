@@ -70,7 +70,7 @@ class Cli
   def explore?(choice)
     if choice == "y" 
       main
-    else
+    else 
       print_goodbye
       exit
     end
