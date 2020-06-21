@@ -3,7 +3,7 @@ class Api
     todays_date = Time.now.to_s.split(" ")[0]
     API_KEY = ENV["API_KEY"]
     
-    BASE_URL =  "https://api.nasa.gov/neo/rest/v1/feed?start_date=#{todays_date}&end_date=#{todays_date}&api_key=API_KEY"
+    BASE_URL =  "https://api.nasa.gov/neo/rest/v1/feed?start_date=#{todays_date}&end_date=#{todays_date}&api_key= API_KEY"
     
     def self.get_profile 
         todays_date = Time.now.to_s.split(" ")[0]
