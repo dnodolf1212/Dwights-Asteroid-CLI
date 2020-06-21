@@ -20,10 +20,13 @@ class Asteroid
 
     def self.fast_asteroids
         @@all.select{|rock| rock.speed.to_i > 20000}
+    
 
     
 
         # return an array of all Asteroid instances whose speed is greater than 20000 mph
     end
+
+    
 
 end 
